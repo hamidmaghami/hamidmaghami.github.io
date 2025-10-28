@@ -1,0 +1,230 @@
+/* ========== تنظیمات کلی و فونت ========== */
+:root {
+    --bg-color: #1a202c; /* پس‌زمینه تیره (سرمه‌ای) */
+    --card-color: #2d3748; /* رنگ کارت‌ها (کمی روشن‌تر) */
+    --text-color: #e2e8f0; /* رنگ متن اصلی (روشن) */
+    --text-color-secondary: #a0aec0; /* رنگ متن ثانویه (خاکستری) */
+    --accent-color: #4fd1c5; /* رنگ تاکیدی (سبزآبی/تیل) */
+    --border-color: #4a5568;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+h2 {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+}
+
+h2 .fas {
+    margin-left: 10px;
+    color: var(--accent-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* ========== 1. بخش معرفی (Hero) ========== */
+.hero {
+    text-align: center;
+    padding: 40px 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero__name {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.hero__title {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.hero__summary {
+    font-size: 1.1rem;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: var(--text-color-secondary);
+}
+
+.hero__summary strong {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.hero__links {
+    margin-bottom: 30px;
+}
+
+.hero__links a {
+    font-size: 2rem;
+    margin: 0 15px;
+    color: var(--text-color-secondary);
+}
+
+.hero__links a:hover {
+    color: var(--accent-color);
+}
+
+.cta-button {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.cta-button .fas {
+    margin-left: 8px;
+}
+
+/* ========== 2. بخش مهارت‌ها ========== */
+.skills__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+/* ========== 3. بخش پروژه‌ها ========== */
+.project-card {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+.project-card p {
+    color: var(--text-color-secondary);
+    font-weight: 300;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.project-tags span {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color-secondary);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+/* ========== 4. بخش تحصیلات ========== */
+.education-item {
+    background-color: var(--card-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-right: 4px solid var(--accent-color);
+}
+
+.education-item h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+}
+
+.education-details {
+    color: var(--text-color-secondary);
+    font-weight: 500;
+    margin: 0;
+}
+
+.education-thesis {
+    color: var(--text-color);
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+/* ========== 5. فوتر ========== */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-color-secondary);
+    font-size: 0.9rem;
+}
+
+/* ========== طراحی واکنش‌گرا (Responsive) ========== */
+@media (max-width: 768px) {
+    .hero__name {
+        font-size: 2.2rem;
+    }
+    .hero__title {
+        font-size: 1.1rem;
+    }
+    .hero__summary {
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+}
