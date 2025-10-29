@@ -219,7 +219,7 @@ a:hover {
     height: 150px; /* اندازه عکس */
     border-radius: 50%; /* دایره‌ای کردن عکس */
     object-fit: cover; /* مطمئن شدن از اینکه عکس خوب نمایش داده شود */
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     border: 3px solid var(--accent-color); /* حاشیه دور عکس */
     box-shadow: 0 0 15px rgba(79, 209, 197, 0.4); /* سایه جذاب */
 }
