@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: 'Vazirmatn', sans-serif; /* هماهنگ با HTML */
+    font-family: 'Vazirmatn', sans-serif;
     direction: rtl;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -55,30 +55,32 @@ a:hover {
 /* ========== 1. بخش معرفی (Hero) ========== */
 .hero {
     padding: 40px 10px;
-    border-bottom: 2px solid var(--border-color); /* <-- خط افقی که در عکس بود */
-    display: flex;
-    justify-content: flex-end; /* <-- کل گروه (عکس+متن) را به راست می‌برد */
-    align-items: center;
 }
 
 /* div اصلی که عکس و متن را دربرمی‌گیرد */
 .hero-main-content {
     display: flex;
-    align-items: center; /* تراز عمودی عکس و متن */
+    justify-content: space-between; /* عکس را به چپ و متن را به راست می‌برد */
+    align-items: center; /* تراز عمودی */
+    
+    /* این دو خط، خط افقی را زیر کل مجموعه قرار می‌دهد */
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px; /* فاصله خط از عکس و متن */
 }
 
 /* بلاک متن (اسم و عنوان) */
 .hero-text-block {
     text-align: right; /* متن‌های داخلش راست‌چین باشند */
+    /* خط افقی از اینجا حذف شد */
 }
 
 /* استایل عکس پروفایل */
 .profile-pic {
-    width: 120px; /* اندازه عکس کمی کوچکتر */
+    width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin-left: 25px; /* <-- فاصله بین عکس و متن */
+    margin-left: 25px;
     border: 3px solid var(--accent-color);
     box-shadow: 0 0 15px rgba(79, 209, 197, 0.4);
 }
@@ -94,19 +96,20 @@ a:hover {
     font-size: 1.3rem;
     font-weight: 400;
     color: var(--accent-color);
-    margin: 5px 0 0 0; /* فاصله از اسم */
+    margin: 5px 0 0 0;
 }
 
 /* بخش محتوای زیر هدر (خلاصه، لینک، دکمه) */
 .hero-content-below {
-    text-align: right; /* همه چیز در این بخش راست‌چین می‌شود */
+    text-align: right;
+    padding-top: 30px; /* فاصله از خط افقی بالا */
 }
 
 .hero__summary {
     font-size: 1.1rem;
     font-weight: 300;
     max-width: 700px;
-    margin: 30px 0 30px auto; /* راست‌چین کردن بلاک متن */
+    margin: 0 0 30px auto;
     color: var(--text-color-secondary);
 }
 
@@ -139,7 +142,7 @@ a:hover {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    display: inline-block; /* برای اینکه در خط خودش باشد */
+    display: inline-block;
 }
 
 .cta-button:hover {
@@ -245,22 +248,24 @@ a:hover {
 
 /* ========== طراحی واکنش‌گرا (Responsive) ========== */
 @media (max-width: 768px) {
-    .hero {
+    .hero-main-content {
         flex-direction: column-reverse; /* عکس بالای متن قرار می‌گیرد */
         justify-content: center;
+        border-bottom: none; /* خط افقی در موبایل حذف شود */
     }
     .profile-pic {
-        margin-left: 0; /* حذف فاصله افقی */
-        margin-bottom: 20px; /* اضافه کردن فاصله عمودی */
+        margin-left: 0;
+        margin-bottom: 20px;
     }
     .hero-text-block {
         text-align: center; /* متن‌ها وسط‌چین می‌شوند */
     }
     .hero-content-below {
-        text-align: center; /* محتوای پایینی هم وسط‌چین می‌شود */
+        text-align: center;
+        border-top: 2px solid var(--border-color); /* خط افقی به اینجا منتقل می‌شود */
     }
     .hero__summary {
-        margin: 30px 0; /* حذف مارجین auto */
+        margin: 30px 0;
     }
     .hero__name {
         font-size: 2.2rem;
