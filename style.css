@@ -80,7 +80,7 @@ a:hover {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin-left: 25px;
+    margin-right: 25px;
     border: 3px solid var(--accent-color);
     box-shadow: 0 0 15px rgba(79, 209, 197, 0.4);
 }
