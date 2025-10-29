@@ -56,7 +56,7 @@ a:hover {
 .hero {
 text-align: right;
     padding: 60px 10px 40px 10px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: none;
 }
 
 .hero__name {
@@ -245,7 +245,7 @@ text-align: right;
     height: 150px; /* اندازه عکس */
     border-radius: 50%; /* دایره‌ای کردن عکس */
     object-fit: cover; /* مطمئن شدن از اینکه عکس خوب نمایش داده شود */
-    margin-left: 20px;
+    margin-bottom: 20px;
     border: 3px solid var(--accent-color); /* حاشیه دور عکس */
     box-shadow: 0 0 15px rgba(79, 209, 197, 0.4); /* سایه جذاب */
 }
