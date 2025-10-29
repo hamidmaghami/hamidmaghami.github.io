@@ -54,7 +54,7 @@ a:hover {
 
 /* ========== 1. بخش معرفی (Hero) ========== */
 .hero {
-    text-align: center;
+text-align: right;
     padding: 40px 10px;
     border-bottom: 1px solid var(--border-color);
 }
