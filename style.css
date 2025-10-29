@@ -1,15 +1,15 @@
 /* ========== تنظیمات کلی و فونت ========== */
 :root {
-    --bg-color: #1a202c; /* پس‌زمینه تیره (سرمه‌ای) */
-    --card-color: #2d3748; /* رنگ کارت‌ها (کمی روشن‌تر) */
-    --text-color: #e2e8f0; /* رنگ متن اصلی (روشن) */
-    --text-color-secondary: #a0aec0; /* رنگ متن ثانویه (خاکستری) */
-    --accent-color: #4fd1c5; /* رنگ تاکیدی (سبزآبی/تیل) */
+    --bg-color: #1a202c;
+    --card-color: #2d3748;
+    --text-color: #e2e8f0;
+    --text-color-secondary: #a0aec0;
+    --accent-color: #4fd1c5;
     --border-color: #4a5568;
 }
 
 body {
-    font-family: 'Vazirmatn', sans-serif; /* <-- این را با لینک HTML هماهنگ کردم */
+    font-family: 'Vazirmatn', sans-serif; /* هماهنگ با HTML */
     direction: rtl;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -54,18 +54,31 @@ a:hover {
 
 /* ========== 1. بخش معرفی (Hero) ========== */
 .hero {
-    text-align: right; /* <-- راست‌چین کردن در دسکتاپ */
-    padding: 60px 10px 40px 10px;
-    border-bottom: none; /* <-- حذف خط پایینی */
+    padding: 40px 10px;
+    border-bottom: 2px solid var(--border-color); /* <-- خط افقی که در عکس بود */
+    display: flex;
+    justify-content: flex-end; /* <-- کل گروه (عکس+متن) را به راست می‌برد */
+    align-items: center;
+}
+
+/* div اصلی که عکس و متن را دربرمی‌گیرد */
+.hero-main-content {
+    display: flex;
+    align-items: center; /* تراز عمودی عکس و متن */
+}
+
+/* بلاک متن (اسم و عنوان) */
+.hero-text-block {
+    text-align: right; /* متن‌های داخلش راست‌چین باشند */
 }
 
 /* استایل عکس پروفایل */
 .profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 120px; /* اندازه عکس کمی کوچکتر */
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px; /* فاصله از اسم */
+    margin-left: 25px; /* <-- فاصله بین عکس و متن */
     border: 3px solid var(--accent-color);
     box-shadow: 0 0 15px rgba(79, 209, 197, 0.4);
 }
@@ -81,14 +94,19 @@ a:hover {
     font-size: 1.3rem;
     font-weight: 400;
     color: var(--accent-color);
-    margin: 10px 0 30px 0; /* فاصله از اسم و خلاصه */
+    margin: 5px 0 0 0; /* فاصله از اسم */
+}
+
+/* بخش محتوای زیر هدر (خلاصه، لینک، دکمه) */
+.hero-content-below {
+    text-align: right; /* همه چیز در این بخش راست‌چین می‌شود */
 }
 
 .hero__summary {
     font-size: 1.1rem;
     font-weight: 300;
     max-width: 700px;
-    margin: 0 0 30px auto; /* <-- این کد آن را به راست می‌چسباند */
+    margin: 30px 0 30px auto; /* راست‌چین کردن بلاک متن */
     color: var(--text-color-secondary);
 }
 
@@ -121,6 +139,7 @@ a:hover {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: inline-block; /* برای اینکه در خط خودش باشد */
 }
 
 .cta-button:hover {
@@ -227,10 +246,21 @@ a:hover {
 /* ========== طراحی واکنش‌گرا (Responsive) ========== */
 @media (max-width: 768px) {
     .hero {
-        text-align: center; /* <-- در موبایل وسط‌چین می‌شود */
+        flex-direction: column-reverse; /* عکس بالای متن قرار می‌گیرد */
+        justify-content: center;
+    }
+    .profile-pic {
+        margin-left: 0; /* حذف فاصله افقی */
+        margin-bottom: 20px; /* اضافه کردن فاصله عمودی */
+    }
+    .hero-text-block {
+        text-align: center; /* متن‌ها وسط‌چین می‌شوند */
+    }
+    .hero-content-below {
+        text-align: center; /* محتوای پایینی هم وسط‌چین می‌شود */
     }
     .hero__summary {
-        margin: 0 0 30px 0; /* <-- مارجین 'auto' حذف می‌شود تا وسط‌چین شود */
+        margin: 30px 0; /* حذف مارجین auto */
     }
     .hero__name {
         font-size: 2.2rem;
