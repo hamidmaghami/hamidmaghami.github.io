@@ -77,7 +77,7 @@ text-align: right;
     font-size: 1.1rem;
     font-weight: 300;
     max-width: 700px;
-    margin: 0 auto 0px auto;
+    margin: 0 auto 30px auto;
     color: var(--text-color-secondary);
 }
 
@@ -120,7 +120,33 @@ text-align: right;
 .cta-button .fas {
     margin-left: 8px;
 }
+.hero-header-content {
+    display: flex; /* برای چیدمان افقی */
+    align-items: center; /* تراز کردن عمودی در مرکز */
+    justify-content: center; /* تراز کردن افقی در مرکز */
+    margin-bottom: 20px; /* فاصله کلی این بخش با عنوان شغلی پایین‌تر */
+}
 
+.hero__name {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0; /* margin-bottom قبلی را صفر کنید */
+    color: #ffffff;
+}
+
+/* اگر در حالت موبایل بخواهید دوباره عکس بالای اسم برگردد */
+@media (max-width: 768px) {
+    .hero-header-content {
+        flex-direction: column; /* در صفحات کوچک‌تر، چیدمان عمودی */
+    }
+    .profile-pic {
+        margin-left: 0; /* فاصله افقی را صفر کنید */
+        margin-bottom: 15px; /* دوباره فاصله عمودی دهید */
+    }
+    .hero__name {
+        font-size: 2.2rem; /* اندازه فونت را در موبایل کوچک‌تر کنید */
+    }
+}
 /* ========== 2. بخش مهارت‌ها ========== */
 .skills__grid {
     display: flex;
@@ -219,7 +245,7 @@ text-align: right;
     height: 150px; /* اندازه عکس */
     border-radius: 50%; /* دایره‌ای کردن عکس */
     object-fit: cover; /* مطمئن شدن از اینکه عکس خوب نمایش داده شود */
-    margin-bottom: 2px;
+    margin-left: 20px;
     border: 3px solid var(--accent-color); /* حاشیه دور عکس */
     box-shadow: 0 0 15px rgba(79, 209, 197, 0.4); /* سایه جذاب */
 }
